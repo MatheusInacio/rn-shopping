@@ -1,19 +1,30 @@
 import React from "react";
-import { View, Image, Dimensions, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Texto from "../../../componentes/Texto";
 
-export function Detalhes({ nome, logoFazenda, nomeFazenda, descricao, preco }) {
+export function Detalhes({
+  nome,
+  logoFazenda,
+  nomeFazenda,
+  descricao,
+  preco,
+  botao,
+}) {
   return (
     <>
       <Texto style={styles.nome}>{nome}</Texto>
 
       <View style={styles.fazenda}>
-        <Texto style={styles.nomeFazenda}>{nomeFazenda}</Texto>
         <Image source={logoFazenda} style={styles.imagemFazenda} />
+        <Texto style={styles.nomeFazenda}>{nomeFazenda}</Texto>
       </View>
 
       <Texto style={styles.descricao}>{descricao}</Texto>
       <Texto style={styles.preco}>{preco}</Texto>
+
+      <TouchableOpacity style={styles.botao}>
+        <Texto style={styles.textoBotao}>{botao}</Texto>
+      </TouchableOpacity>
     </>
   );
 }
@@ -28,6 +39,9 @@ const styles = StyleSheet.create({
   nomeFazenda: {
     fontSize: 16,
     lineHeight: 26,
+    marginHorizontal: 12,
+    display: "flex",
+    alignItems: "center"
   },
   fazenda: {
     flexDirection: "row",
@@ -50,4 +64,17 @@ const styles = StyleSheet.create({
     lineHeight: 42,
     marginTop: 8,
   },
+  botao: {
+    marginTop:16,
+    backgroundColor: "#2a9f85",
+    paddingVertical: 16,
+    borderRadius: 6
+  },
+  textoBotao: {
+    textAlign: "center",
+    color: "#fff",
+    fontSize: 16,
+    lineHeight: 26,
+    fontWeight: "bold"
+  }
 });

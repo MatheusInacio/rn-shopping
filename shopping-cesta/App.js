@@ -5,7 +5,7 @@ import {
   Montserrat_400Regular,
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
-import { Cesta } from "./src/telas";
+import { Cesta } from "./src/telas/Cesta";
 import mock from "./src/mock/cesta";
 import AppLoading from "expo-app-loading";
 
@@ -20,7 +20,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <StatusBar />
       <Cesta {...mock} />
     </SafeAreaView>
